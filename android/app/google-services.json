@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "20939572735",
+    "project_id": "mubadrat-d19f4",
+    "storage_bucket": "mubadrat-d19f4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20939572735:android:165745af99a5f33d46d3ca",
+        "android_client_info": {
+          "package_name": "com.example.best_of_the_best"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW0BO2ikwXluD7U-pdVLIQ8PO-Uapj5o4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
