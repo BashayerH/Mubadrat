@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -46,30 +47,30 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCXvakgavp4h_oKgqQDZJfQqBRcPmxseSk',
-    appId: '1:20939572735:web:ddb3bce078207ab746d3ca',
-    messagingSenderId: '20939572735',
-    projectId: 'mubadrat-d19f4',
-    authDomain: 'mubadrat-d19f4.firebaseapp.com',
-    storageBucket: 'mubadrat-d19f4.firebasestorage.app',
-    measurementId: 'G-9F7YXSQT4P',
+  static FirebaseOptions get web => FirebaseOptions(
+    apiKey: dotenv.env['WEB_API_KEY']!,
+    appId: dotenv.env['WEB_APP_ID']!,
+    messagingSenderId: dotenv.env['FIREBASE_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['FIREBASE_PROJECT_ID']!,
+    authDomain: dotenv.env['WEB_AUTH_DOMAIN'],
+    storageBucket: dotenv.env['FIREBASE_STORAGE_BUCKET'],
+    measurementId: dotenv.env['WEB_MEASUREMENT_ID'],
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAW0BO2ikwXluD7U-pdVLIQ8PO-Uapj5o4',
-    appId: '1:20939572735:android:165745af99a5f33d46d3ca',
-    messagingSenderId: '20939572735',
-    projectId: 'mubadrat-d19f4',
-    storageBucket: 'mubadrat-d19f4.firebasestorage.app',
+  static FirebaseOptions get android => FirebaseOptions(
+    apiKey: dotenv.env['ANDROID_API_KEY']!,
+    appId: dotenv.env['ANDROID_APP_ID']!,
+    messagingSenderId: dotenv.env['FIREBASE_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['FIREBASE_PROJECT_ID']!,
+    storageBucket: dotenv.env['FIREBASE_STORAGE_BUCKET'],
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBwyMurQJayeIdaHbgVyZbucd8w-_jcvqs',
-    appId: '1:20939572735:ios:93ef68c8caad28d446d3ca',
-    messagingSenderId: '20939572735',
-    projectId: 'mubadrat-d19f4',
-    storageBucket: 'mubadrat-d19f4.firebasestorage.app',
-    iosBundleId: 'com.example.bestOfTheBest',
+  static FirebaseOptions get macos => FirebaseOptions(
+    apiKey: dotenv.env['MACOS_API_KEY']!,
+    appId: dotenv.env['MACOS_APP_ID']!,
+    messagingSenderId: dotenv.env['FIREBASE_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['FIREBASE_PROJECT_ID']!,
+    storageBucket: dotenv.env['FIREBASE_STORAGE_BUCKET'],
+    iosBundleId: dotenv.env['MACOS_IOS_BUNDLE_ID'],
   );
 }
